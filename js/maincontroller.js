@@ -60,10 +60,23 @@ app.controller("MainController", function($scope, $http){
             if ($scope.letters[thisLetter].count > 1) {
                 $scope.letters[thisLetter].availability = 'overused'
             }
+
+            // Rate Quality
+            $scope.ratePangramQuality()
+
         });
 
-        // Lists and Variables
     }
+
+    $scope.ratePangramQuality = function() {
+        var max = $scope.languages[$scope.selectedLanguage].letters.length
+        var unique = $scope.uniqueLetters.length
+        var actual = $scope.inputLetters.length
+        $scope.pangramQuality.percentage = 100*unique / max 
+        $scope.pangramQuality.errorlevel = actual - unique
+    }
+    
+    // Lists and Variables
 
     $scope.languages = {
         'german': {
@@ -86,6 +99,7 @@ app.controller("MainController", function($scope, $http){
     $scope.inputLetters = ''
     $scope.uniqueLetters = ''
     $scope.overUsedLetters = []
+    $scope.pangramQuality = {'percentage': 0, 'errorlevel': 0}
 
     // Init
 

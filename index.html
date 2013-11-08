@@ -16,8 +16,11 @@
     
     <input type="text" size="70" data-ng-model="inputLetters" data-ng-change="checkLetter()">
 
-    <!-- <h2>INPUT: {{ inputLetters }}</h2> -->
-    <!-- <h2>UNIQUE: {{ uniqueLetters }}</h2> -->
+    <h2>Quality: {{ pangramQuality.percentage | number:2 }}%</h2>
+    <h2>Error Level: {{ pangramQuality.errorlevel }}</h2>
+    <h2>INPUT: {{ inputLetters.length }}</h2>
+    <h2>UNIQUE: {{ uniqueLetters.length }}</h2>
+    <h2>Default: {{ languages[selectedLanguage].letters.length }}</h2>
     <ul class="select-language">
         <li class="language" data-ng-repeat="language in languages"><a href="#" data-ng-click="selectLanguage(language.name)">{{ language.name }}</a></li>
     </ul> 
