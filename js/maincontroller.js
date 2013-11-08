@@ -72,7 +72,12 @@ app.controller("MainController", function($scope, $http){
         'english': {
             'letters': ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'],
             'name': 'english'
+        },
+        'french': {
+            'letters': ['a', 'c', 'b', 'e', 'd', 'g', 'f', 'i', 'h', 'k', 'j', 'm', 'l', 'o', 'n', 'q', 'p', 's', 'r', 'u', 't', 'w', 'v', 'y', 'x', 'z'],
+            'name': 'french'
         }
+
     }
 
     $scope.lettersDefault = {};
