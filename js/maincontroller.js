@@ -2,7 +2,8 @@ app.controller("MainController", function($scope, $http){
 
     $scope.selectLanguage = function(languageName) {
         $scope.lettersDefault = setLanguage(languageName)
-        $scope.letters = $scope.lettersDefault
+         $scope.checkLetter()
+        $scope.selectedLanguage = languageName
     }
 
     function setLanguage(languageName) {
