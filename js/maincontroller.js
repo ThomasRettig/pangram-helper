@@ -85,6 +85,10 @@ app.controller("MainController", function($scope, $http){
          'polish': {
             'letters': ['ą', 'ć', 'ę', 'ł', 'ń', 'ś', 'ź', 'ż', 'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'],
             'name': 'polish'
+        },
+         'turkish': {
+            'letters': ['ç', 'ö', 'ü', 'ą', 'ć', 'ę', 'ğ', 'ı', 'ł', 'ń', 'ś', 'ş', 'ź', 'ż', 'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'],
+            'name': 'turkish'
         }
 
     }
