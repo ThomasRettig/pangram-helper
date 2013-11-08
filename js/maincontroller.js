@@ -1,39 +1,19 @@
 app.controller("MainController", function($scope, $http){
-    
-    $scope.lettersDefault = {
-        'a': {'name': 'a', 'default': true, 'availability': 'free', 'count': 0},
-        'b': {'name': 'b', 'default': true, 'availability': 'free', 'count': 0},
-        'c': {'name': 'c', 'default': true, 'availability': 'free', 'count': 0},
-        'd': {'name': 'd', 'default': true, 'availability': 'free', 'count': 0},
-        'e': {'name': 'e', 'default': true, 'availability': 'free', 'count': 0},
-        'f': {'name': 'f', 'default': true, 'availability': 'free', 'count': 0},
-        'g': {'name': 'g', 'default': true, 'availability': 'free', 'count': 0},
-        'h': {'name': 'h', 'default': true, 'availability': 'free', 'count': 0},
-        'i': {'name': 'i', 'default': true, 'availability': 'free', 'count': 0},
-        'j': {'name': 'j', 'default': true, 'availability': 'free', 'count': 0},
-        'k': {'name': 'k', 'default': true, 'availability': 'free', 'count': 0},
-        'l': {'name': 'l', 'default': true, 'availability': 'free', 'count': 0},
-        'm': {'name': 'm', 'default': true, 'availability': 'free', 'count': 0},
-        'n': {'name': 'n', 'default': true, 'availability': 'free', 'count': 0},
-        'o': {'name': 'o', 'default': true, 'availability': 'free', 'count': 0},
-        'p': {'name': 'p', 'default': true, 'availability': 'free', 'count': 0},
-        'q': {'name': 'q', 'default': true, 'availability': 'free', 'count': 0},
-        'r': {'name': 'r', 'default': true, 'availability': 'free', 'count': 0},
-        's': {'name': 's', 'default': true, 'availability': 'free', 'count': 0},
-        't': {'name': 't', 'default': true, 'availability': 'free', 'count': 0},
-        'u': {'name': 'u', 'default': true, 'availability': 'free', 'count': 0},
-        'v': {'name': 'v', 'default': true, 'availability': 'free', 'count': 0},
-        'w': {'name': 'w', 'default': true, 'availability': 'free', 'count': 0},
-        'x': {'name': 'x', 'default': true, 'availability': 'free', 'count': 0},
-        'y': {'name': 'y', 'default': true, 'availability': 'free', 'count': 0},
-        'z': {'name': 'z', 'default': true, 'availability': 'free', 'count': 0}
-    };
 
-    $scope.letters = $scope.lettersDefault
-    $scope.lettersUserExtended = {}
-    $scope.inputLetters = ''
-    $scope.uniqueLetters = ''
-    $scope.overUsedLetters = []
+    $scope.selectLanguage = function(languageName) {
+        $scope.lettersDefault = setLanguage(languageName)
+        $scope.letters = $scope.lettersDefault
+    }
+
+    function setLanguage(languageName) {
+        console.log('Selecting', languageName);
+        var returnObject = {}
+        angular.forEach($scope.languages[languageName].letters, function(letter) {
+            returnObject[letter] = {'name': letter, 'default': true, 'availability': 'free', 'count': 0}
+        })
+
+        return returnObject
+    }
 
     function resetLetterJSON() {
         $scope.letters = $scope.lettersDefault
@@ -81,33 +61,56 @@ app.controller("MainController", function($scope, $http){
             }
         });
 
-
-        // ----------------------------------------------------------------------------
-        // ???? -- Do I need this stuff?
-
-        // if ($scope.inputLetters >= $scope.uniqueLetters) {
-        //     // Something is added to the input field
-        //     console.log('add');
-        //     $scope.uniqueLetters = $scope.usedLetters
-        // } else {
-        //     // Something is delted from the input field
-        //     console.log('delete');
-        // }
-
-
-
-        // var getLastLetter = $scope.inputLetters.substr($scope.inputLetters.length - 1)
-        // var lastLetter = $scope.letters[getLastLetter]
-
-        // // Count letters
-        // // ! - Add functionality to reduce Count when letter is deleted
-        // lastLetter.count++
-
-        // if ( lastLetter.availability == 'free') {
-        //     lastLetter.availability = 'used'
-        // } else {
-        //     lastLetter.availability = 'overused'
-        // }
-        // console.log(lastLetter);
+        // Lists and Variables
     }
+
+    $scope.languages = {
+        'german': {
+            'letters': ['ä', 'ö', 'ü', 'ß', 'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'],
+            'name': 'german'
+        },
+        'english': {
+            'letters': ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'],
+            'name': 'english'
+        }
+    }
+
+    $scope.lettersDefault = {};
+    $scope.lettersUserExtended = {}
+    $scope.inputLetters = ''
+    $scope.uniqueLetters = ''
+    $scope.overUsedLetters = []
+
+    // Init
+
+    $scope.selectLanguage('german')
+
+
+    // ----------------------------------------------------------------------------
+    // ???? -- Do I need this stuff?
+
+    // if ($scope.inputLetters >= $scope.uniqueLetters) {
+    //     // Something is added to the input field
+    //     console.log('add');
+    //     $scope.uniqueLetters = $scope.usedLetters
+    // } else {
+    //     // Something is delted from the input field
+    //     console.log('delete');
+    // }
+
+
+
+    // var getLastLetter = $scope.inputLetters.substr($scope.inputLetters.length - 1)
+    // var lastLetter = $scope.letters[getLastLetter]
+
+    // // Count letters
+    // // ! - Add functionality to reduce Count when letter is deleted
+    // lastLetter.count++
+
+    // if ( lastLetter.availability == 'free') {
+    //     lastLetter.availability = 'used'
+    // } else {
+    //     lastLetter.availability = 'overused'
+    // }
+    // console.log(lastLetter);
 });

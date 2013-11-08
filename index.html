@@ -16,9 +16,11 @@
     
     <input type="text" size="70" data-ng-model="inputLetters" data-ng-change="checkLetter()">
 
-    <h2>INPUT: {{ inputLetters }}</h2>
-    <h2>UNIQUE: {{ uniqueLetters }}</h2>
-
+    <!-- <h2>INPUT: {{ inputLetters }}</h2> -->
+    <!-- <h2>UNIQUE: {{ uniqueLetters }}</h2> -->
+    <ul class="select-language">
+        <li class="language" data-ng-repeat="language in languages"><a href="#" data-ng-click="selectLanguage(language.name)">{{ language.name }}</a></li>
+    </ul> 
     <div class="letters">
         <div class="letters-default">
             <span data-ng-repeat="(letter, data) in letters" class="default-{{data.default}} letter {{ data.availability }}">{{ letter }}<sup class="count">{{ data.count }}</span>
