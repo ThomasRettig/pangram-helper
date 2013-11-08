@@ -32,9 +32,9 @@
             <span data-ng-repeat="(letter, data) in lettersUserExtended" class="default-{{data.default}} letter {{ data.availability }}">{{ letter }}<sup class="count">{{ data.count }}</span>
         </div>
     </div>
-    <!-- <pre>{{ lettersUserExtended | json }}</pre> -->
+    <pre>[<span data-ng-repeat="(letter, data) in lettersUserExtended">'{{ letter }}', </span>]</pre>
     <!-- <pre>{{ letters | json }}</pre> -->
-    <pre>{{ lettersDefault | json }}</pre>
+    <!-- <pre>{{ lettersDefault | json }}</pre> -->
  
 <script src="js/jquery-2.0.3.min.js"></script>
 <script src="js/domscript.js"></script>
