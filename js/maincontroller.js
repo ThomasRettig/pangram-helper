@@ -81,6 +81,10 @@ app.controller("MainController", function($scope, $http){
          'spanish': {
             'letters': ['á', 'é', 'í', 'ñ', 'ó', 'ú', 'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'],
             'name': 'spanish'
+        },
+         'polish': {
+            'letters': ['ą', 'ć', 'ę', 'ł', 'ń', 'ś', 'ź', 'ż', 'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'],
+            'name': 'polish'
         }
 
     }
