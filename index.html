@@ -18,23 +18,36 @@
 <body data-ng-app="PangramBuilder" data-ng-controller="MainController">
     <div class="header">
         <h1>pangram.io</h1>
+        <p class="subtitle">
+            Create your own pangram
+        </p>
     </div>
 
     <div class="content">
-        <p>
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-        </p>
         
-        <input type="text" size="70" data-ng-model="inputLetters" data-ng-change="checkLetter()">
+        <!-- <ul class="select-language">
+            <li class="language" data-ng-repeat="language in languages"><a href="#" data-ng-click="selectLanguage(language.name)">{{ language.name }}</a></li>
+        </ul> -->
+        <span>Language:
+            <select class="select-language" data-ng-init="data = languages[selectedLanguage]" data-ng-model="data" data-ng-options="data.name for (object, data) in languages" data-ng-change="selectLanguage(data.name)"></select> 
+        </span>
+        <span>Quality: {{ pangramQuality.percentage | number:2 }}%
+        </span>
+        <span>Error Level: {{ pangramQuality.errorlevel }}
+        </span>  
 
-        <h2>Quality: {{ pangramQuality.percentage | number:2 }}%</h2>
+        <form class="input-area">
+            <textarea class="input-pangram" rows="2" data-ng-model="inputLetters" data-ng-change="checkLetter()"></textarea>
+            <div class="input-share">
+                <a href="#">Save to clipboard</a>
+                <a href="#">Share</a> 
+            </div>
+        </form>
+        <!-- <h2>Quality: {{ pangramQuality.percentage | number:2 }}%</h2>
         <h2>Error Level: {{ pangramQuality.errorlevel }}</h2>
         <h2>INPUT: {{ inputLetters.length }}</h2>
         <h2>UNIQUE: {{ uniqueLetters.length }}</h2>
-        <h2>Default: {{ languages[selectedLanguage].letters.length }}</h2>
-        <ul class="select-language">
-            <li class="language" data-ng-repeat="language in languages"><a href="#" data-ng-click="selectLanguage(language.name)">{{ language.name }}</a></li>
-        </ul> 
+        <h2>Default: {{ languages[selectedLanguage].letters.length }}</h2> -->
         <div class="letters">
             <div class="letters-default">
                 <span data-ng-repeat="(letter, data) in letters" class="default-{{data.default}} letter {{ data.availability }}">{{ letter }}<sup class="count">{{ data.count }}</span>
@@ -43,7 +56,7 @@
                 <span data-ng-repeat="(letter, data) in lettersUserExtended" class="default-{{data.default}} letter {{ data.availability }}">{{ letter }}<sup class="count">{{ data.count }}</span>
             </div>
         </div>
-        <pre>[<span data-ng-repeat="(letter, data) in lettersUserExtended">'{{ letter }}', </span>]</pre>
+        <!-- <pre>[<span data-ng-repeat="(letter, data) in lettersUserExtended">'{{ letter }}', </span>]</pre> -->
         <!-- <pre>{{ letters | json }}</pre> -->
         <!-- <pre>{{ lettersDefault | json }}</pre> -->
     </div>

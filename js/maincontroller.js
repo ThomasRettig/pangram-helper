@@ -109,6 +109,14 @@ app.controller("MainController", function($scope, $http){
 
     }
 
+    // Create list of language names for select menu
+    $scope.languageNames = []
+    angular.forEach($scope.languages, function(thisLanguage) {
+        $scope.languageNames.push(thisLanguage.name);
+    });
+
+    console.log($scope.languageNames);
+
     $scope.lettersDefault = {};
     $scope.lettersUserExtended = {}
     $scope.inputLetters = ''
@@ -118,6 +126,7 @@ app.controller("MainController", function($scope, $http){
     // Init
 
     $scope.selectLanguage('english')
+    console.log($scope.selectedLanguage);
 
 
     // ----------------------------------------------------------------------------

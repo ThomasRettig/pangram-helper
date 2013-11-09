@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* style.scss */
 article,
 aside,
@@ -194,3 +195,89 @@ textarea {
 table {
   border-collapse: collapse;
   border-spacing: 0; }
+
+* {
+  box-sizing: border-box; }
+
+body {
+  background-color: #f6fc73;
+  color: #e53a17;
+  font-family: 'jaf-facitweb';
+  font-size: 1.5em;
+  font-weight: 300;
+  padding: 0 0.5em 2em 0.5em; }
+
+h1 {
+  font-weight: 800;
+  margin: 0;
+  width: 100%;
+  text-align: center;
+  padding: 0; }
+
+.subtitle {
+  margin: 0;
+  text-align: center;
+  font-size: 0.9em; }
+
+.header {
+  min-height: 10em;
+  border-bottom: 1px solid #e53a17;
+  margin-bottom: 1em; }
+
+.select-language {
+  text-transform: capitalize;
+  margin-bottom: 0.5em; }
+
+.input-area {
+  text-align: center; }
+
+.input-pangram {
+  width: 100%; }
+
+.input-share {
+  overflow: hidden; }
+
+.letter {
+  border: 1px solid gray;
+  border-radius: 0.2em;
+  color: white;
+  display: inline-block;
+  padding: 0.2em;
+  position: relative;
+  margin: 0.4em;
+  text-align: center;
+  text-transform: uppercase;
+  width: 1.2em; }
+
+.free {
+  color: black;
+  background-color: white; }
+
+.used {
+  color: white;
+  background-color: black; }
+
+.overused {
+  color: white;
+  background-color: black; }
+
+.count {
+  position: absolute;
+  right: -0.5em;
+  top: -0.7em;
+  background-color: #F00;
+  padding: 0.1em;
+  font-size: 0.8em;
+  width: 1em;
+  height: 1em;
+  border-radius: 2em;
+  line-height: 1.06em;
+  text-align: center; }
+
+.free > .count, .used > .count {
+  display: none; }
+
+/* Don´t show the characters which are not default */
+/* ! - Could not get the filter to work in Angular */
+.letters-default > .default-false {
+  display: none; }
