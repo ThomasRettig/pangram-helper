@@ -212,7 +212,6 @@ html {
   background-color: #e1e2c1; }
 
 body {
-  background-color: #e1e2c1;
   color: #e53a17;
   font-family: KievitWebPro-Light, "ff-kievit-web-pro", sans;
   font-size: 1.5em;
@@ -221,6 +220,10 @@ body {
   @media all and (min-width: 32em) {
     body {
       font-size: 2em; } }
+  @media all and (min-width: 42em) {
+    body {
+      max-width: 30em;
+      margin: auto; } }
 
 h1 {
   font-family: 'jaf-facitweb';
@@ -261,12 +264,13 @@ ul {
   padding-bottom: 1em; }
 
 .footer {
+  border-top: 1px solid #e53a17;
   font-family: 'jaf-facitweb';
   font-size: 0.5em;
   font-weight: 400;
   text-align: center;
   margin-top: 4em;
-  padding-bottom: 1em; }
+  padding: 1em 0; }
   @media all and (min-width: 32em) {
     .footer {
       font-size: 0.4em; } }
@@ -377,7 +381,7 @@ ul {
   text-transform: uppercase;
   width: 1.6em;
   height: 1.6em;
-  line-height: 1.6em; }
+  line-height: 1.8em; }
 
 .free {
   color: #382a2a;

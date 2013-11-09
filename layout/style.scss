@@ -38,7 +38,6 @@ html {
 }
 
 body {
-    background-color: $bg-color;
     color: $text-color;
     font-family: KievitWebPro-Light, "ff-kievit-web-pro", sans;
     font-size: 1.5em;
@@ -47,6 +46,11 @@ body {
    
     @media #{$MQ-1} {
         font-size: 2em;
+    }
+
+    @media #{$MQ-2} {
+        max-width: 30em;
+        margin: auto;
     }
     
 }
@@ -99,12 +103,13 @@ ul {
 }
 
 .footer {
+    border-top: 1px solid $text-color;
     font-family: 'jaf-facitweb';
     font-size: 0.5em;
     font-weight: 400;
     text-align: center;
     margin-top: 4em;
-    padding-bottom: 1em;
+    padding: 1em 0;
 
     @media #{$MQ-1} {
         font-size: 0.4em;
@@ -237,7 +242,7 @@ ul {
     text-transform: uppercase;
     width: 1.6em;
     height: 1.6em;
-    line-height: 1.6em;
+    line-height: 1.8em;
 }
 
 .free {
