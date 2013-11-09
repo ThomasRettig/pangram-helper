@@ -44,9 +44,46 @@ h1 {
 
 }
 
+.input-meta {
+    font-size: 0.7em;
+    list-style: none;
+}
+
+.input-meta-item {
+    display: inline-block;
+    padding: 0 1em;
+}
+
 .select-language {
-    text-transform: capitalize;
+    -webkit-appearance: none;
+    -moz-appearance:none;
+    appearance:none;
+    background: rgba(0, 0, 0, 0);
+    border-radius: 0;
+    border: none;
+    color: inherit;
+    font-weight: 300;
     margin-bottom: 0.5em;
+    outline:none;
+    padding: 0 1.2em 0 0.2em;
+    text-transform: capitalize;
+}
+
+label {
+    border-bottom: 1px solid $text-color;
+    position: relative
+}
+
+label:after {
+    content: '▾';
+    position: absolute;
+    pointer-events: none;
+    right: 0.2em;
+    top: 0;
+}
+
+.select-language option:after {
+    content: '▾'; 
 }
 
 .input-area {

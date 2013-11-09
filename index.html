@@ -28,13 +28,17 @@
         <!-- <ul class="select-language">
             <li class="language" data-ng-repeat="language in languages"><a href="#" data-ng-click="selectLanguage(language.name)">{{ language.name }}</a></li>
         </ul> -->
-        <span>Language:
-            <select class="select-language" data-ng-init="data = languages[selectedLanguage]" data-ng-model="data" data-ng-options="data.name for (object, data) in languages" data-ng-change="selectLanguage(data.name)"></select> 
-        </span>
-        <span>Quality: {{ pangramQuality.percentage | number:2 }}%
-        </span>
-        <span>Error Level: {{ pangramQuality.errorlevel }}
-        </span>  
+        <ul class="input-meta">
+            <li class="input-meta-item">Language:
+                <label>
+                <select class="select-language" data-ng-init="data = languages[selectedLanguage]" data-ng-model="data" data-ng-options="data.name for (object, data) in languages" data-ng-change="selectLanguage(data.name)"></select> 
+                </label>
+            </li>
+            <li class="input-meta-item">Quality: {{ pangramQuality.percentage | number:2 }}%
+            </li>
+            <li class="input-meta-item">Error Level: {{ pangramQuality.errorlevel }}
+            </li>  
+        </ul>
 
         <form class="input-area">
             <textarea class="input-pangram" rows="2" data-ng-model="inputLetters" data-ng-change="checkLetter()"></textarea>
