@@ -196,6 +196,15 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+@font-face {
+  font-family: KievitWebPro-Light;
+  src: url("fonts/KievitWebPro-Light.eot"); }
+
+/* then for WOFF-capable browsers */
+@font-face {
+  font-family: KievitWebPro-Light;
+  src: url("fonts/KievitWebPro-Light.woff") format("woff"); }
+
 * {
   box-sizing: border-box; }
 
@@ -205,7 +214,7 @@ html {
 body {
   background-color: #e1e2c1;
   color: #e53a17;
-  font-family: 'ff-kievit-web-pro';
+  font-family: KievitWebPro-Light, "ff-kievit-web-pro", sans;
   font-size: 1.5em;
   font-weight: 300;
   padding: 0 0.5em; }
@@ -311,6 +320,9 @@ ul {
   line-height: 1.5em;
   margin-bottom: 0.2em;
   display: inline-block; }
+  @media all and (min-width: 42em) {
+    .input-meta-item {
+      display: block; } }
 
 .select-language {
   -webkit-appearance: none;

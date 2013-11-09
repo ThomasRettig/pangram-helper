@@ -9,7 +9,6 @@
 
     $MQ-1: 'all and (min-width: 32em)';
     $MQ-2: 'all and (min-width: 42em)';
-    $MQ-3: 'all and (min-width: 66em)';
 
 
 $text-color: #e53a17;
@@ -17,6 +16,17 @@ $bg-color: #E1E2C1;
 
 $regular-size: 1em;
 $small-size: 0.7em;
+
+@font-face {
+    font-family: KievitWebPro-Light;
+    src: url("fonts/KievitWebPro-Light.eot");
+}
+
+/* then for WOFF-capable browsers */
+@font-face {
+    font-family: KievitWebPro-Light;
+    src: url("fonts/KievitWebPro-Light.woff") format("woff");
+}
 
 
 * {
@@ -30,7 +40,7 @@ html {
 body {
     background-color: $bg-color;
     color: $text-color;
-    font-family: 'ff-kievit-web-pro';
+    font-family: KievitWebPro-Light, "ff-kievit-web-pro", sans;
     font-size: 1.5em;
     font-weight: 300;
     padding: 0 0.5em;
@@ -161,6 +171,10 @@ ul {
     line-height: 1.5em;
     margin-bottom: 0.2em;
     display: inline-block;
+
+    @media #{$MQ-2} {
+        display: block;;
+    }
 }
 
 .select-language {
