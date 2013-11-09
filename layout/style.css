@@ -200,7 +200,7 @@ table {
   box-sizing: border-box; }
 
 body {
-  background-color: #f6fc73;
+  background-color: #e1e2c1;
   color: #e53a17;
   font-family: 'jaf-facitweb';
   font-size: 1.5em;
@@ -212,12 +212,12 @@ h1 {
   margin: 0;
   width: 100%;
   text-align: center;
-  padding: 0; }
+  padding: 0.7em 0 0 0; }
 
 .subtitle {
   margin: 0;
   text-align: center;
-  font-size: 0.9em; }
+  font-size: 0.7em; }
 
 .header {
   min-height: 10em;
