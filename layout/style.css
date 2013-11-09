@@ -199,20 +199,24 @@ table {
 * {
   box-sizing: border-box; }
 
-body {
+body, html {
   background-color: #e1e2c1;
   color: #e53a17;
-  font-family: 'jaf-facitweb';
+  font-family: 'ff-kievit-web-pro';
   font-size: 1.5em;
   font-weight: 300;
-  padding: 0 0.5em 2em 0.5em; }
+  padding: 0 0.5em; }
 
 h1 {
+  font-family: 'jaf-facitweb';
   font-weight: 800;
   margin: 0;
   width: 100%;
   text-align: center;
   padding: 0.7em 0 0 0; }
+
+a {
+  color: #e53a17; }
 
 .subtitle {
   margin: 0;
@@ -224,13 +228,42 @@ h1 {
   border-bottom: 1px solid #e53a17;
   margin-bottom: 1em; }
 
+.footer {
+  font-family: 'jaf-facitweb';
+  font-size: 0.4em;
+  font-weight: 400;
+  text-align: center;
+  margin-top: 4em;
+  padding-bottom: 1em; }
+
+.input-area {
+  text-align: center; }
+
+.input-pangram {
+  width: 100%;
+  border: none;
+  border-radius: 4px;
+  color: #382a2a;
+  font-size: 0.7em;
+  padding: 0.4em;
+  margin-bottom: 1em; }
+
+.input-share {
+  overflow: hidden; }
+
 .input-meta {
   font-size: 0.7em;
-  list-style: none; }
+  list-style: none;
+  display: inline-block;
+  width: 30%; }
+
+.input-meta-caption {
+  display: inline-block;
+  min-width: 6em; }
 
 .input-meta-item {
-  display: inline-block;
-  padding: 0 1em; }
+  line-height: 2em;
+  margin-bottom: 0.2em; }
 
 .select-language {
   -webkit-appearance: none;
@@ -240,70 +273,70 @@ h1 {
   border-radius: 0;
   border: none;
   color: inherit;
-  font-weight: 300;
-  margin-bottom: 0.5em;
   outline: none;
   padding: 0 1.2em 0 0.2em;
   text-transform: capitalize; }
 
-label {
+.input-meta-label {
   border-bottom: 1px solid #e53a17;
   position: relative; }
 
-label:after {
-  content: '▾';
+.input-meta-label:after {
+  content: "▾";
   position: absolute;
   pointer-events: none;
-  right: 0.2em;
-  top: 0; }
+  right: 0.2em; }
 
-.select-language option:after {
-  content: '▾'; }
+.letters {
+  width: 68%;
+  display: inline-block;
+  vertical-align: top;
+  padding-top: 0.5em; }
 
-.input-area {
-  text-align: center; }
+.letters-default {
+  display: block; }
 
-.input-pangram {
-  width: 100%; }
-
-.input-share {
-  overflow: hidden; }
+.letters-userextended {
+  display: block; }
 
 .letter {
-  border: 1px solid gray;
-  border-radius: 0.2em;
+  border-radius: 4px;
   color: white;
   display: inline-block;
-  padding: 0.2em;
+  font-size: 0.7em;
+  font-weight: 400;
   position: relative;
-  margin: 0.4em;
+  margin: 0.3em;
   text-align: center;
   text-transform: uppercase;
-  width: 1.2em; }
+  width: 1.6em;
+  height: 1.6em;
+  line-height: 1.6em; }
 
 .free {
-  color: black;
+  color: #382a2a;
   background-color: white; }
 
 .used {
   color: white;
-  background-color: black; }
+  background-color: #e53a17; }
 
 .overused {
   color: white;
-  background-color: black; }
+  background-color: #382a2a; }
 
 .count {
   position: absolute;
   right: -0.5em;
-  top: -0.7em;
-  background-color: #F00;
-  padding: 0.1em;
-  font-size: 0.8em;
-  width: 1em;
-  height: 1em;
+  top: -0.5em;
+  background-color: #f21e0c;
   border-radius: 2em;
-  line-height: 1.06em;
+  font-size: 0.6em;
+  font-weight: 200;
+  padding: 0 0.3em;
+  height: 1.2em;
+  min-width: 1.2em;
+  line-height: 1.3em;
   text-align: center; }
 
 .free > .count, .used > .count {
