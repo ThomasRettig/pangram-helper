@@ -42,28 +42,30 @@
         <h2>INPUT: {{ inputLetters.length }}</h2>
         <h2>UNIQUE: {{ uniqueLetters.length }}</h2>
         <h2>Default: {{ languages[selectedLanguage].letters.length }}</h2> -->
-        <ul class="input-meta">
-            <li class="input-meta-item"><span class="input-meta-caption">Language:</span>
-                <label class="input-meta-label">
-                <select class="select-language" data-ng-init="data = languages[selectedLanguage]" data-ng-model="data" data-ng-options="data.name for (object, data) in languages" data-ng-change="selectLanguage(data.name)"></select> 
-                </label>
-            </li>
-            <li class="input-meta-item"><span class="input-meta-caption">Quality:</span> {{ pangramQuality.percentage | number:2 }}%
-            </li>
-           <!--  <li class="input-meta-item"><span class="input-meta-caption">Error Level:</span> {{ pangramQuality.errorlevel }}
-            </li>   -->
-        </ul>
-        <div class="letters">
-            <div class="letters-default">
-                <span data-ng-repeat="(letter, data) in letters" class="default-{{data.default}} letter {{ data.availability }}">{{ letter }}<sup class="count">{{ data.count }}</span>
+        <div class="meta">
+            <ul class="input-meta">
+                <li class="input-meta-item"><span class="input-meta-caption">Language:</span>
+                    <label class="input-meta-label">
+                    <select class="select-language" data-ng-init="data = languages[selectedLanguage]" data-ng-model="data" data-ng-options="data.name for (object, data) in languages" data-ng-change="selectLanguage(data.name)"></select> 
+                    </label>
+                </li>
+                <li class="input-meta-item"><span class="input-meta-caption">Quality:</span> {{ pangramQuality.percentage | number:2 }}%
+                </li>
+               <!--  <li class="input-meta-item"><span class="input-meta-caption">Error Level:</span> {{ pangramQuality.errorlevel }}
+                </li>   -->
+            </ul>
+            <div class="letters">
+                <div class="letters-default">
+                    <span data-ng-repeat="(letter, data) in letters" class="default-{{data.default}} letter {{ data.availability }}">{{ letter }}<sup class="count">{{ data.count }}</span>
+                </div>
+                <div class="letters-userextended">
+                    <span data-ng-repeat="(letter, data) in lettersUserExtended" class="default-{{data.default}} letter {{ data.availability }}">{{ letter }}<sup class="count">{{ data.count }}</span>
+                </div>
             </div>
-            <div class="letters-userextended">
-                <span data-ng-repeat="(letter, data) in lettersUserExtended" class="default-{{data.default}} letter {{ data.availability }}">{{ letter }}<sup class="count">{{ data.count }}</span>
-            </div>
+            <!-- <pre>[<span data-ng-repeat="(letter, data) in lettersUserExtended">'{{ letter }}', </span>]</pre> -->
+            <!-- <pre>{{ letters | json }}</pre> -->
+            <!-- <pre>{{ lettersDefault | json }}</pre> -->
         </div>
-        <!-- <pre>[<span data-ng-repeat="(letter, data) in lettersUserExtended">'{{ letter }}', </span>]</pre> -->
-        <!-- <pre>{{ letters | json }}</pre> -->
-        <!-- <pre>{{ lettersDefault | json }}</pre> -->
     </div>
     <div class="footer">
         Created by <a href="https://twitter.com/filip_axani">Philipp Acsany</a> – Built with <a href="http://angularjs.org">AngularJS</a> and <a href="http://www.ffkievit.com">FF Kievit</a> – Visit this project at <a href="https://github.com/axani/pangram-helper">GitHub</a>

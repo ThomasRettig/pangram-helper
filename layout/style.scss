@@ -2,60 +2,108 @@
 
 @import "normalize";
 
+// --- Media Queries ---
+    // Die MQ sind bei den jeweiligen Elementen untergebracht.
+    // Die Gestaltung der CSS-Elemente ist "Mobile First"
+    // Die MQ Variablen können hier global geändert werden:
+
+    $MQ-1: 'all and (min-width: 32em)';
+    $MQ-2: 'all and (min-width: 42em)';
+    $MQ-3: 'all and (min-width: 66em)';
+
 
 $text-color: #e53a17;
 $bg-color: #E1E2C1;
+
+$regular-size: 1em;
+$small-size: 0.7em;
 
 
 * {
     box-sizing: border-box;
 }
 
-body, html {
+html {
+    background-color: $bg-color;
+}
+
+body {
     background-color: $bg-color;
     color: $text-color;
     font-family: 'ff-kievit-web-pro';
     font-size: 1.5em;
     font-weight: 300;
     padding: 0 0.5em;
+   
+    @media #{$MQ-1} {
+        font-size: 2em;
+    }
+    
 }
 
 h1 {
     font-family: 'jaf-facitweb';
     font-weight: 800;
+    font-size: 1.5em;
     margin: 0;
     // text-transform: uppercase;
     width: 100%;
     text-align: center;
     padding: 0.7em 0 0 0;
+    @media #{$MQ-1} {
+        background-color: blue;
+        font-size: 2em;
+    }
+
+    @media #{$MQ-2} {
+        background-color: yellow;
+    }
 }
+
 
 a {
     color: $text-color;
 }
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
 .subtitle {
     margin: 0;
     text-align: center;
-    font-size: 0.7em;
+    font-size: $regular-size;
+    @media #{$MQ-1} {
+        font-size: $small-size;
+    }
 }
 
 .header {
-    min-height: 10em;
+    min-height: 6em;
     border-bottom: 1px solid $text-color;
     margin-bottom: 1em;
+
+    @media #{$MQ-1} {
+        min-height: 10em;
+    }
 }
 
 .content {
-
+    padding-bottom: 1em;
 }
 
 .footer {
     font-family: 'jaf-facitweb';
-    font-size: 0.4em;
+    font-size: 0.5em;
     font-weight: 400;
     text-align: center;
     margin-top: 4em;
     padding-bottom: 1em;
+
+    @media #{$MQ-1} {
+        font-size: 0.4em;
+    }
 }
 
 .input-area {
@@ -68,7 +116,10 @@ a {
     border: none;
     border-radius: 4px;
     color: #382a2a;
-    font-size: 0.7em;
+    font-size: $regular-size;
+    @media #{$MQ-1} {
+        font-size: $small-size;
+    }
     padding: 0.4em;
     margin-bottom: 1em;
 }
@@ -77,27 +128,44 @@ a {
     overflow: hidden;
 }
 
+.meta {
+    width: 100%;
+}
 
 .input-meta {
-    font-size: 0.7em;
+    font-size: $regular-size;
     list-style: none;
-    display: inline-block;
-    width: 30%;
+    width: 100%;
+
+    @media #{$MQ-1} {
+        font-size: $small-size;
+        display: inline-block;
+    }
+
+    @media #{$MQ-2} {
+        width: 40%;
+        padding-left: 0.2em;
+    }
 }
 
 .input-meta-caption {
     display: inline-block;
     min-width: 6em;
+
+    @media #{$MQ-1} {
+        min-width: 4em;
+    }
 }
 
 .input-meta-item {
-    line-height: 2em;
+    line-height: 1.5em;
     margin-bottom: 0.2em;
+    display: inline-block;
 }
 
 .select-language {
     -webkit-appearance: none;
-    -moz-appearance:none;
+    // -moz-appearance:none;
     appearance:none;
     background: rgba(0, 0, 0, 0);
     border-radius: 0;
@@ -111,6 +179,14 @@ a {
 .input-meta-label {
     border-bottom: 1px solid $text-color;
     position: relative;
+    margin-right: 1em;
+    @media #{$MQ-1} {
+        margin-right: 2em;
+    }
+
+    @media #{$MQ-2} {
+        margin-right: 0;
+    }
 }
 
 .input-meta-label:after {
@@ -118,13 +194,18 @@ a {
     position: absolute;
     pointer-events: none;
     right: 0.2em;
+    top: -0.2em;
 }
 
 .letters {
-    width: 68%;
+    width: 100%;
     display: inline-block;
     vertical-align: top;
     padding-top: 0.5em;
+    @media #{$MQ-2} {
+        width: 58%;
+        padding-top: 0;
+    }
 }
 
 .letters-default {
@@ -139,7 +220,7 @@ a {
     border-radius: 4px;
     color: white;
     display: inline-block;
-    font-size: 0.7em;
+    font-size: $small-size;
     font-weight: 400;
     position: relative;
     margin: 0.3em;
@@ -149,9 +230,6 @@ a {
     height: 1.6em;
     line-height: 1.6em;
 }
-
-
-
 
 .free {
     color: #382a2a;
@@ -174,7 +252,10 @@ a {
     top: -0.5em;
     background-color: #f21e0c;
     border-radius: 2em;
-    font-size: 0.6em;
+    font-size: 0.8em;
+    @media #{$MQ-1} {
+        font-size:  0.6em;
+    }
     font-weight: 200;
     padding: 0 0.3em;
     height: 1.2em;
