@@ -138,6 +138,7 @@ app.controller("MainController", function($scope, $http){
 
     // Init
 
+    $('.input-pangram').focus();
     $scope.selectLanguage('english')
     console.log($scope.selectedLanguage);
 
