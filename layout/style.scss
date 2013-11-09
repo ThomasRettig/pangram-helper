@@ -61,12 +61,7 @@ h1 {
     text-align: center;
     padding: 0.7em 0 0 0;
     @media #{$MQ-1} {
-        background-color: blue;
         font-size: 2em;
-    }
-
-    @media #{$MQ-2} {
-        background-color: yellow;
     }
 }
 

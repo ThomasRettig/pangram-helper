@@ -232,11 +232,7 @@ h1 {
   padding: 0.7em 0 0 0; }
   @media all and (min-width: 32em) {
     h1 {
-      background-color: blue;
       font-size: 2em; } }
-  @media all and (min-width: 42em) {
-    h1 {
-      background-color: yellow; } }
 
 a {
   color: #e53a17; }
