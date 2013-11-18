@@ -142,12 +142,16 @@ app.controller("MainController", function($scope, $http){
     $scope.selectLanguage('english')
     console.log($scope.selectedLanguage);
 
-    // Click on letters works too
-
+    // Click on letter adds letter to textarea
     $('.letters').on('click', '.letter', function() {
         var clickedLetter = $(this).attr('data-content');
         var textAreaValue = $('.input-pangram').val();
-        $('.input-pangram').val(textAreaValue + clickedLetter);
+
+        var scope = angular.element('.input-pangram').scope();
+        scope.$apply(function(){
+            $scope.inputLetters += clickedLetter
+            $scope.checkLetter()
+        });
     })
 
 
