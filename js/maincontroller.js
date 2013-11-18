@@ -142,6 +142,14 @@ app.controller("MainController", function($scope, $http){
     $scope.selectLanguage('english')
     console.log($scope.selectedLanguage);
 
+    // Click on letters works too
+
+    $('.letters').on('click', '.letter', function() {
+        var clickedLetter = $(this).attr('data-content');
+        var textAreaValue = $('.input-pangram').val();
+        $('.input-pangram').val(textAreaValue + clickedLetter);
+    })
+
 
     // ----------------------------------------------------------------------------
     // ???? -- Do I need this stuff?

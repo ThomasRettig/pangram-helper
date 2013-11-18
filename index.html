@@ -56,10 +56,10 @@
             </ul>
             <div class="letters">
                 <div class="letters-default">
-                    <span data-ng-repeat="(letter, data) in letters" class="default-{{data.default}} letter {{ data.availability }}">{{ letter }}<sup class="count">{{ data.count }}</span>
+                    <span data-ng-repeat="(letter, data) in letters" data-content="{{ letter }}" class="default-{{data.default}} letter {{ data.availability }}">{{ letter }}<sup class="count">{{ data.count }}</span>
                 </div>
                 <div class="letters-userextended">
-                    <span data-ng-repeat="(letter, data) in lettersUserExtended" class="default-{{data.default}} letter {{ data.availability }}">{{ letter }}<sup class="count">{{ data.count }}</span>
+                    <span data-ng-repeat="(letter, data) in lettersUserExtended" data-content="{{ letter }}" class="default-{{data.default}} letter {{ data.availability }}">{{ letter }}<sup class="count">{{ data.count }}</span>
                 </div>
             </div>
             <!-- <pre>[<span data-ng-repeat="(letter, data) in lettersUserExtended">'{{ letter }}', </span>]</pre> -->
