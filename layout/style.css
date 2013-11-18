@@ -382,7 +382,14 @@ ul {
   text-transform: uppercase;
   width: 1.6em;
   height: 1.6em;
-  line-height: 1.8em; }
+  line-height: 1.8em;
+  /* Prevent accidentally selecting the letter-boxes */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
 
 .free {
   color: #382a2a;

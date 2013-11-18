@@ -35,34 +35,38 @@ app.controller("MainController", function($scope, $http){
         resetLetterJSON()
 
         angular.forEach($scope.inputLetters, function(thisLetter) {
-            // Make lowercase
-            thisLetter = thisLetter.toLowerCase()
+            // Ignore space
+            if (thisLetter != ' ') {
 
-            // If this is not a default letter add it to the letterJSON
-            if (!(thisLetter in $scope.letters)) {
-                $scope.lettersUserExtended[thisLetter] = {'name': thisLetter, 'default': false, 'availability': 'free', 'count': 0}
-                $scope.letters[thisLetter] = $scope.lettersUserExtended[thisLetter]
+                // Make lowercase
+                thisLetter = thisLetter.toLowerCase()
+
+                // If this is not a default letter add it to the letterJSON
+                if (!(thisLetter in $scope.letters)) {
+                    $scope.lettersUserExtended[thisLetter] = {'name': thisLetter, 'default': false, 'availability': 'free', 'count': 0}
+                    $scope.letters[thisLetter] = $scope.lettersUserExtended[thisLetter]
+                }
+
+                // Check if this letter is already used
+                var alreadyUsed = $.inArray(thisLetter, $scope.uniqueLetters) > -1;
+                if (alreadyUsed == false) {
+                    $scope.uniqueLetters += thisLetter
+                }
+                
+                // Count letters
+                $scope.letters[thisLetter].count++
+
+                if ($scope.letters[thisLetter].count == 1) {
+                    $scope.letters[thisLetter].availability = 'used'
+                }
+
+                if ($scope.letters[thisLetter].count > 1) {
+                    $scope.letters[thisLetter].availability = 'overused'
+                }
+
+                // Rate Pangramquality
+                $scope.ratePangramQuality()
             }
-
-            // Check if this letter is already used
-            var alreadyUsed = $.inArray(thisLetter, $scope.uniqueLetters) > -1;
-            if (alreadyUsed == false) {
-                $scope.uniqueLetters += thisLetter
-            }
-            
-            // Count letters
-            $scope.letters[thisLetter].count++
-
-            if ($scope.letters[thisLetter].count == 1) {
-                $scope.letters[thisLetter].availability = 'used'
-            }
-
-            if ($scope.letters[thisLetter].count > 1) {
-                $scope.letters[thisLetter].availability = 'overused'
-            }
-
-            // Rate Pangramquality
-            $scope.ratePangramQuality()
         });
 
     }
