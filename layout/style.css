@@ -11,7 +11,7 @@
 
 body {
   color: var(--accent-color);
-  font-family: Segoe UI;
+  font-family: system-ui;
   font-size: 1.5em;
   padding: 0 0.5em;
 }
