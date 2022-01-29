@@ -4,7 +4,7 @@
 
 :focus-visible {
   border-color: #0060df;
-  box-shadow: 0 0 0 2px rgb(0 144 237/.5);
+  box-shadow: 0 0 0 2px rgb(255 10 10/.5);
   outline: 0;
   border-radius: 2px !important;
 }
@@ -76,7 +76,7 @@ ul {
   padding-bottom: 1em;
 }
 
-.footer {
+footer {
   border-top: 1px solid var(--accent-color);
   font-size: 0.5em;
   font-weight: 400;
@@ -86,7 +86,7 @@ ul {
 }
 
 @media all and (min-width: 32em) {
-  .footer {
+  footer {
     font-size: 0.4em;
   }
 }
