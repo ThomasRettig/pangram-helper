@@ -2,6 +2,13 @@
   --accent-color: #e53a17;
 }
 
+:focus-visible {
+  border-color: #0060df;
+  box-shadow: 0 0 0 2px rgb(0 144 237/.5);
+  outline: 0;
+  border-radius: 2px;
+}
+
 body {
   color: var(--accent-color);
   font-family: Segoe UI;
@@ -166,7 +173,6 @@ ul {
   border-radius: 0;
   border: none;
   color: inherit;
-  outline: none;
   padding: 0 1.2em 0 0.2em;
   text-transform: capitalize;
 }
