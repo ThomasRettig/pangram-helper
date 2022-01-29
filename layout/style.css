@@ -6,7 +6,7 @@
   border-color: #0060df;
   box-shadow: 0 0 0 2px rgb(0 144 237/.5);
   outline: 0;
-  border-radius: 2px;
+  border-radius: 2px !important;
 }
 
 body {
