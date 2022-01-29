@@ -5,40 +5,23 @@
     <title>pangram.io</title>
     <meta name="description" content="Build your own custom pangram. Pangram.io currently support English, German, French, Italian, Polish, Russian, Swedish, Turkish and Spanish." />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-     
     <link rel="stylesheet" href="layout/style.css" type="text/css" />
     <script src="js/jquery-2.0.3.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js" type="text/javascript"></script>
-    <script src="js/app.js" type="text/javascript"></script>
-    <script src="js/maincontroller.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/maincontroller.js"></script>
 </head>
  
 <body data-ng-app="PangramBuilder" data-ng-controller="MainController">
     <div class="header">
-        <h1>pangram.io</h1>
-        <p class="subtitle">
-            Create your own pangram
-        </p>
+        <h1>Pangram Generator</h1>
+        <p class="subtitle">Create your own pangram!</p>
     </div>
 
     <div class="content">
-        
-        <!-- <ul class="select-language">
-            <li class="language" data-ng-repeat="language in languages"><a href="#" data-ng-click="selectLanguage(language.name)">{{ language.name }}</a></li>
-        </ul> -->
-
         <form class="input-area">
             <textarea class="input-pangram" rows="2" data-ng-model="inputLetters" data-ng-change="checkLetter()"></textarea>
-            <!-- <div class="input-share">
-                <a href="#">Save to clipboard</a>
-                <a href="#">Share</a> 
-            </div> -->
         </form>
-        <!-- <h2>Quality: {{ pangramQuality.percentage | number:2 }}%</h2>
-        <h2>Error Level: {{ pangramQuality.errorlevel }}</h2>
-        <h2>INPUT: {{ inputLetters.length }}</h2>
-        <h2>UNIQUE: {{ uniqueLetters.length }}</h2>
-        <h2>Default: {{ languages[selectedLanguage].letters.length }}</h2> -->
         <div class="meta">
             <ul class="input-meta">
                 <li class="input-meta-item"><span class="input-meta-caption">Language:</span>
@@ -48,8 +31,6 @@
                 </li>
                 <li class="input-meta-item"><span class="input-meta-caption">Quality:</span> {{ pangramQuality.percentage | number:2 }}%
                 </li>
-               <!--  <li class="input-meta-item"><span class="input-meta-caption">Error Level:</span> {{ pangramQuality.errorlevel }}
-                </li>   -->
             </ul>
             <div class="letters">
                 <div class="letters-default">
@@ -59,16 +40,12 @@
                     <span data-ng-repeat="(letter, data) in lettersUserExtended" data-content="{{ letter }}" class="default-{{data.default}} letter {{ data.availability }}">{{ letter }}<sup class="count">{{ data.count }}</span>
                 </div>
             </div>
-            <!-- <pre>[<span data-ng-repeat="(letter, data) in lettersUserExtended">'{{ letter }}', </span>]</pre> -->
-            <!-- <pre>{{ letters | json }}</pre> -->
-            <!-- <pre>{{ lettersDefault | json }}</pre> -->
         </div>
     </div>
     <footer class="footer">
-        Created by <a href="https://twitter.com/filip_axani">Philipp Acsany</a> — Built with <a href="http://angularjs.org">AngularJS</a>, <a href="http://justanotherfoundry.com/facit">JAF Facit</a> and <a href="http://www.ffkievit.com">FF Kievit</a> — Visit this project on <a href="https://github.com/axani/pangram-helper">GitHub</a>
+        Created by <a href="https://twitter.com/filip_axani">Philipp Acsany</a> — Built with <a href="http://angularjs.org">AngularJS</a> — Visit this project on <a href="https://github.com/axani/pangram-helper">GitHub</a>
     </footer>
  
-
 <script src="js/domscript.js"></script>
 </body>
 </html>
