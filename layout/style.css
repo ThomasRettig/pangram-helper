@@ -9,6 +9,10 @@
   border-radius: 2px !important;
 }
 
+html {
+  webkit-text-size-adjust: none;
+}
+
 body {
   color: var(--accent-color);
   font-family: system-ui;
