@@ -8,9 +8,13 @@
   border-radius: 2px !important;
 }
 
+html {
+  -webkit-text-size-adjust: none;
+}
+
 body {
   color: var(--accent-color);
-  font-family: Segoe UI;
+  font-family: system-ui;
   font-size: 1.5em;
   padding: 0 0.5em;
 }
