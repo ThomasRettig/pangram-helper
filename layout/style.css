@@ -14,7 +14,7 @@ html {
 
 body {
   color: var(--accent-color);
-  font-family: 'Spline Sans', system-ui, sans-serif;
+  font-family: system-ui, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro",Osaka, "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
   font-size: 1.5em;
   padding: 0 0.5em;
 }
@@ -34,8 +34,8 @@ body {
 
 h1 {
   font-weight: 700;
-  font-size: clamp(2rem, 3rem, 3.7rem);
-  letter-spacing: -1.5px;
+  font-size: clamp(2rem, -0.8750rem + 8.3333vw, 3.7rem);;
+  letter-spacing: -1px;
   margin: 0;
   width: 100%;
   text-align: center;
@@ -192,11 +192,11 @@ footer {
   }
 }
 
-.input-meta-label:after {
+.input-meta-label::after {
   content: "▾";
   position: absolute;
   pointer-events: none;
-  right: 0.8em;
+  right: 0.3em;
   top: -0.05em;
 }
 
