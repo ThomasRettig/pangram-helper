@@ -19,7 +19,7 @@ html {
 
 body {
   color: var(--accent-color);
-  font-family: 'Spline Sans', system-ui, "MS PGothic";
+  font-family: 'Spline Sans', "MS PGothic", system-ui;
   font-size: 1.5em;
   padding: 0 0.5em;
 }
