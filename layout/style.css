@@ -14,16 +14,16 @@
 }
 
 @font-face {
-  src: url('fonts/WarblerText-Regular.woff2') format("woff2"),
-       url('fonts/WarblerText-Regular.woff') format("woff");
+  src: url('../fonts/WarblerText-Regular.woff2') format("woff2"),
+       url('../fonts/WarblerText-Regular.woff') format("woff");
   font-family: 'Warbler Text';
   font-style: normal;
   font-weight: 400;
 }
 
 @font-face {
-  src: url('fonts/WarblerText-Italic.woff2') format("woff2"),
-       url('fonts/WarblerText-Italic.woff') format("woff");
+  src: url('../fonts/WarblerText-Italic.woff2') format("woff2"),
+       url('../fonts/WarblerText-Italic.woff') format("woff");
   font-family: 'Warbler Text';
   font-style: italic;
   font-weight: 400;
