@@ -13,15 +13,34 @@
   border-radius: 2px !important;
 }
 
+@font-face {
+  src: url('fonts/WarblerText-Regular.woff2') format("woff2"),
+       url('fonts/WarblerText-Regular.woff') format("woff");
+  font-family: 'Warbler Text';
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  src: url('fonts/WarblerText-Italic.woff2') format("woff2"),
+       url('fonts/WarblerText-Italic.woff') format("woff");
+  font-family: 'Warbler Text';
+  font-style: italic;
+  font-weight: 400;
+}
+
 html {
   -webkit-text-size-adjust: none;
 }
 
 body {
   color: var(--accent-color);
-  font-family: 'Spline Sans', "MS PGothic", system-ui;
   font-size: 1.5em;
   padding: 0 0.5em;
+}
+
+:not(h1) {
+  font-family: 'Spline Sans', "MS PGothic", system-ui, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 @media all and (min-width: 32em) {
@@ -38,7 +57,8 @@ body {
 }
 
 h1 {
-  font-weight: 700;
+  font-family: 'Warbler Text', 'Baskerville', "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+  font-weight: 400;
   font-size: clamp(2rem, -0.8750rem + 8.3333vw, 3.7rem);
   letter-spacing: max(-0.05vw, -0.5vw, -0.65vw);
   margin: 0;
@@ -210,6 +230,7 @@ footer {
   display: inline-block;
   vertical-align: top;
   padding-top: 0.5em;
+  user-select: none;
 }
 
 @media all and (min-width: 42em) {
@@ -241,7 +262,6 @@ footer {
   width: 1.6em;
   height: 1.6em;
   line-height: 1.8em;
-  user-select: none;
 }
 
 .free {
@@ -266,7 +286,6 @@ footer {
   background-color: #f21e0c;
   border-radius: 2em;
   font-size: 0.8em;
-  font-weight: 200;
   padding: 0 0.3em;
   height: 1.2em;
   min-width: 1.2em;
@@ -284,12 +303,6 @@ footer {
 .used>.count {
   display: none;
 }
-
-
-/* Don´t show the characters which are not default */
-
-
-/* ! - Could not get the filter to work in Angular */
 
 .letters-default>.default-false {
   display: none;
