@@ -7,6 +7,13 @@
   color: white;
 }
 
+::placeholder {
+  color: var(--accent-color);
+  opacity: 0.5;
+  font-size: 90%;
+}
+
+
 :focus-visible {
   box-shadow: 0 0 0 2px rgb(255 10 10/.5);
   outline: 0;
@@ -283,7 +290,7 @@ footer {
   font-size: 0.8em;
   padding: 0 0.3em;
   height: 1.2em;
-  min-width: 0.75em;
+  min-width: 0.9em;
   line-height: 1.3em;
   text-align: center;
 }
