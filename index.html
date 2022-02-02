@@ -17,11 +17,9 @@
 </head>
  
 <body data-ng-app="PangramBuilder" data-ng-controller="MainController">
-    <div class="header">
+    <header>
         <h1>Pangram Helper</h1>
-        <p class="subtitle">Create your own pangram!</p>
-    </div>
-
+    </header>
     <div class="content">
         <form class="input-area">
             <textarea class="input-pangram" rows="2" data-ng-model="inputLetters" data-ng-change="checkLetter()"></textarea>
@@ -46,10 +44,6 @@
             </div>
         </div>
     </div>
-    <!-- <footer>
-        Created by <a href="https://twitter.com/filip_axani">Philipp Acsany</a> — Modified by <a href="https://thmsrttg.netlify.app/">Thomas Rettig</a> — Built with <a href="http://angularjs.org">AngularJS</a> — <a href="https://github.com/thomasRettig/pangram-helper">View on GitHub</a>
-    </footer> -->
- 
 <script src="js/domscript.js"></script>
 </body>
 </html>
